@@ -6,48 +6,22 @@ This repository contains resources and scripts used to deploy a static HTML web 
 
 In this project, we utilized AWS services to host a static website, leveraging best practices in cloud architecture to ensure reliability, security, and scalability. The following AWS resources and configurations were employed:
 
-1. **Virtual Private Cloud (VPC) Configuration:**
-   - Configured a VPC with public and private subnets across two Availability Zones (AZs) to enhance fault tolerance and security.
-
-2. **Internet Connectivity:**
-   - Deployed an Internet Gateway to facilitate connectivity between the VPC instances and the Internet.
-
-3. **Security:**
-   - Established Security Groups to act as a network firewall mechanism, controlling inbound and outbound traffic.
-
-4. **Availability Zones:**
-   - Used two Availability Zones to ensure high availability and fault tolerance.
-
-5. **Public Subnets:**
-   - Utilized public subnets for infrastructure components such as the NAT Gateway and Application Load Balancer.
-
-6. **Private Subnets:**
-   - Positioned web servers (EC2 instances) within private subnets for enhanced security.
-   - Enabled instances in the private App and Data subnets to access the Internet through the NAT Gateway.
-
-7. **EC2 Instances:**
-   - Hosted the website on EC2 Instances within private subnets.
-
-8. **Load Balancing and Auto Scaling:**
+- **Virtual Private Cloud (VPC) Configuration:** Configured a VPC with public and private subnets across two Availability Zones (AZs) to enhance fault tolerance and security.
+- **Internet Connectivity:** Deployed an Internet Gateway to facilitate connectivity between the VPC instances and the Internet.
+- **Security:** Established Security Groups to act as a network firewall mechanism, controlling inbound and outbound traffic.
+- **Availability Zones:** Used two Availability Zones to ensure high availability and fault tolerance.
+- **Public Subnets:** Utilized public subnets for infrastructure components such as the NAT Gateway and Application Load Balancer.
+- **Private Subnets:** Positioned web servers (EC2 instances) within private subnets for enhanced security.
+- **EC2 Instances:** Hosted the website on EC2 Instances within private subnets.
+- **Load Balancing and Auto Scaling:**
    - Implemented an Application Load Balancer and a target group to distribute web traffic across an Auto Scaling Group of EC2 instances.
    - Configured an Auto Scaling Group to manage EC2 instances automatically, ensuring scalability and fault tolerance.
-
-9. **Version Control and Deployment:**
-   - Stored web files in a GitHub repository for version control and collaboration.
-
-10. **Security Certificates:**
-    - Secured application communications using AWS Certificate Manager.
-
-11. **Notifications:**
-    - Configured Simple Notification Service (SNS) for alerts related to Auto Scaling Group activities.
-
-12. **Domain Registration and DNS:**
-    - Registered a domain name and set up DNS records using Route 53.
+- **Version Control and Deployment:** Stored web files in a GitHub repository for version control and collaboration.
+- **Security Certificates:** Secured application communications using AWS Certificate Manager.
+- **Notifications:** Configured Simple Notification Service (SNS) for alerts related to Auto Scaling Group activities.
+- **Domain Registration and DNS:** Registered a domain name and set up DNS records using Route 53.
 
 ## Deployment Script
-
-Below is the bash script used to set up the web server on an EC2 instance:
-
 ```bash
 #!/bin/bash
 # Switch to the root user to gain full administrative privileges
